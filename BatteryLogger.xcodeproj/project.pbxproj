@@ -13,6 +13,7 @@
 		B3B40AA52B4D078D00492C0C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3B40AA42B4D078D00492C0C /* Preview Assets.xcassets */; };
 		B3B40AAC2B4D1B3F00492C0C /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B40AAB2B4D1B3F00492C0C /* Device.swift */; };
 		B3B40AAE2B4D1FAC00492C0C /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B40AAD2B4D1FAC00492C0C /* Error.swift */; };
+		B3B40AB02B4D423600492C0C /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B40AAF2B4D423600492C0C /* Utils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		B3B40AA42B4D078D00492C0C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B3B40AAB2B4D1B3F00492C0C /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
 		B3B40AAD2B4D1FAC00492C0C /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
+		B3B40AAF2B4D423600492C0C /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 			children = (
 				B3B40A9D2B4D078A00492C0C /* BatteryLoggerApp.swift */,
 				B3B40A9F2B4D078A00492C0C /* ContentView.swift */,
+				B3B40AAF2B4D423600492C0C /* Utils.swift */,
 				B3B40AAD2B4D1FAC00492C0C /* Error.swift */,
 				B3B40AAB2B4D1B3F00492C0C /* Device.swift */,
 				B3B40AA12B4D078D00492C0C /* Assets.xcassets */,
@@ -143,6 +146,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3B40AB02B4D423600492C0C /* Utils.swift in Sources */,
 				B3B40AAE2B4D1FAC00492C0C /* Error.swift in Sources */,
 				B3B40AAC2B4D1B3F00492C0C /* Device.swift in Sources */,
 				B3B40AA02B4D078A00492C0C /* ContentView.swift in Sources */,
