@@ -10,6 +10,7 @@ class BatteryViewModel: ObservableObject{
     @Published var batteryLevel: Int = 0
     @Published var batteryStateDescription: String = ""
     
+    
     init(){
         UIDevice.current.isBatteryMonitoringEnabled = true
         self.batteryLevel = Int(UIDevice.current.batteryLevel * 100)
@@ -49,6 +50,9 @@ struct ContentView: View {
     @State private var time:String = ""
     @State private var batteryValue:String = ""
     @State private var batteryState:String = ""
+    @State private var url:URL?
+    @State private var timer: Timer?
+    
     
     var body: some View {
         VStack {
@@ -59,23 +63,71 @@ struct ContentView: View {
             TextField("Enter Ip Address", text: $ipInput)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .padding()
+            
             Button("Start", action: {
-                startFetchingData()
+                if self.timer == nil {
+                                   // Start the continuous task
+                                   self.startContinuousTask()
+                               } else {
+                                   // Stop the continuous task
+                                   self.stopContinuousTask()
+                               }
+                
                 batteryValue = String( batteryViewModel.batteryLevel)
                 batteryState = String(batteryViewModel.batteryStateDescription)
+                
             }).padding()
-            Button("Stop", action:{})
+            
+            Button("Stop", action:{
+                self.stopContinuousTask()
+            }).padding()
+            
+            Button("Clear File", action: {
+                clearFile(fileURL: (url!))
+            }).padding()
+            
+            ShareLink(item: ((url) ?? URL(string: "www.google.com"))!)
         }.padding()
+        // Disable the idle timer when the view appears
+            .onAppear {
+                UIApplication.shared.isIdleTimerDisabled = true
+            }
+        // Re-enable the idle timer when the view disappears
+            .onDisappear {
+                UIApplication.shared.isIdleTimerDisabled = false
+            }
+        
     }
+    // Function to start the continuous task
+        private func startContinuousTask() {
+            self.timer = Timer.scheduledTimer(withTimeInterval: 5.0, repeats: true) { timer in
+                startFetchingData(
+                    batteryLevel: String(batteryViewModel.batteryLevel),
+                    batteryState: batteryViewModel.batteryStateDescription
+                )
+                print("Continuous task is running every 5 seconds...")
+            }
+        }
+
+        // Function to stop the continuous task
+        private func stopContinuousTask() {
+            // Stop the timer
+            self.timer?.invalidate()
+            self.timer = nil
+            print("Continuous task stopped.")
+        }
     
-    func startFetchingData(){
+    
+    func startFetchingData(batteryLevel:String, batteryState:String){
         Task{
             do{
                 device = try await getUser(ipAddress: ipInput)
                 response = device?.DEVN ?? "no response"
                 time = getTime()
                 success = true
-                writeToFile(
+                url = writeToFile(
+                    batteryLevel: batteryLevel,
+                    batteryState: batteryState,
                     deviceName: device?.DEVN ?? "nil",
                     status: device?.STATUS ?? "nil",
                     voltage: device?.VOLTAGE ?? "nil",
@@ -118,4 +170,5 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+
 

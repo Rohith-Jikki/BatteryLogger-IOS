@@ -17,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B39E6E202B4E9591005D9D35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		B3B40A9A2B4D078A00492C0C /* BatteryLogger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BatteryLogger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3B40A9D2B4D078A00492C0C /* BatteryLoggerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryLoggerApp.swift; sourceTree = "<group>"; };
 		B3B40A9F2B4D078A00492C0C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -57,6 +58,7 @@
 		B3B40A9C2B4D078A00492C0C /* BatteryLogger */ = {
 			isa = PBXGroup;
 			children = (
+				B39E6E202B4E9591005D9D35 /* Info.plist */,
 				B3B40A9D2B4D078A00492C0C /* BatteryLoggerApp.swift */,
 				B3B40A9F2B4D078A00492C0C /* ContentView.swift */,
 				B3B40AAF2B4D423600492C0C /* Utils.swift */,
@@ -281,6 +283,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"BatteryLogger/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BatteryLogger/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -309,6 +312,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"BatteryLogger/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BatteryLogger/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

@@ -14,4 +14,5 @@ struct BatteryLoggerApp: App {
             ContentView()
         }
     }
+    
 }
